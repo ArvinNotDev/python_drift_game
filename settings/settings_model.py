@@ -8,17 +8,19 @@ class GeneralSettings(BaseModel):
     fixed_timestep: bool = True
 
 class PhysicsSettings(BaseModel):
-    max_speed: float = 12.0
+    speed: float = 60.0
+    reverse_speed: float = 150.0
+    max_speed: float = 600.0
     acceleration: float = 0.2
-    deceleration: float = 0.1
+    deceleration: float = 0.6
     braking_force: float = 0.3
     reverse_speed: float = -4.0
 
 class DriftSettings(BaseModel):
     drift_factor: float = 0.96
     grip_factor: float = 0.88
-    steering_speed: float = 3.0
-    max_steering_angle: float = 35.0
+    steering_speed: float = 45.0
+    max_steering_angle: float = 180.0
 
 class HandlingSettings(BaseModel):
     traction_control: bool = True

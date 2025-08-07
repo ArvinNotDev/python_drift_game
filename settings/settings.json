@@ -7,17 +7,18 @@
         "fixed_timestep": true
     },
     "physics": {
-        "max_speed": 12.0,
+        "speed": 60.0,
+        "reverse_speed": -4.0,
+        "max_speed": 600.0,
         "acceleration": 0.2,
-        "deceleration": 0.1,
-        "braking_force": 0.3,
-        "reverse_speed": -4.0
+        "deceleration": 0.6,
+        "braking_force": 0.3
     },
     "drift": {
         "drift_factor": 0.96,
         "grip_factor": 0.88,
-        "steering_speed": 3.0,
-        "max_steering_angle": 35.0
+        "steering_speed": 45.0,
+        "max_steering_angle": 180.0
     },
     "handling": {
         "traction_control": true,
