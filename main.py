@@ -1,7 +1,7 @@
 from settings.settings import settings
 import pygame
 import sys  
-from assets.cars import draw
+from assets.cars import normal_car
 
 class Game:
     def __init__(self):
@@ -24,7 +24,7 @@ class Game:
 
     def draw(self):
         self.draw_map()
-        draw(self.screen, pygame.Vector2(400, 300))
+        normal_car(self.screen, pygame.Vector2(400, 300))
         pygame.display.flip()
 
     def run(self):
