@@ -1,8 +1,7 @@
-from settings.settings import settings as Settings
+from settings.settings import settings
 import pygame
 import sys  
-
-settings = Settings()
+from assets.cars import draw
 
 class Game:
     def __init__(self):
@@ -16,25 +15,26 @@ class Game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
-            # events are here
-    
+
     def update(self, dt):
-        # updating game objects
-        pass
+        pass  # update game logic
 
     def draw_map(self):
         self.screen.fill((30, 30, 30))
 
+    def draw(self):
+        self.draw_map()
+        draw(self.screen, pygame.Vector2(400, 300))
         pygame.display.flip()
 
     def run(self):
         while self.running:
-            dt = self.clock.tick(settings.general.fps) / 1000  # Delta time in seconds so more fps doesn't bother the gameplay
+            dt = self.clock.tick(settings.general.fps) / 1000
             self.handle_events()
+            self.update(dt)
             self.draw()
         pygame.quit()
         sys.exit()
-
 
 if __name__ == "__main__":
     game = Game()
