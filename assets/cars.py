@@ -1,6 +1,6 @@
 import pygame
 
-def draw(surface, pos: pygame.Vector2):
+def normal_car(surface, pos: pygame.Vector2):
     car_size = pygame.Vector2(60, 120)
     car_body = pygame.Rect(pos.x, pos.y, car_size.x, car_size.y)
 
